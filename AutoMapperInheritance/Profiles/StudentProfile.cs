@@ -9,7 +9,8 @@ namespace AutoMapperInheritance.Profiles
         public StudentProfile()
         {
             CreateMap<SourceStudent, DestinationFamily>()
-                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.SourceFirstName));
+                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.SourceFirstName))
+                  .ForMember(dest => dest.Adresses, opt => opt.MapFrom(src => "adresse ecrasée"));
         }
     }
 }
